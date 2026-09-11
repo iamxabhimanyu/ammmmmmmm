@@ -465,7 +465,12 @@ export function App() {
             {/* VIEW 3: RADAR & MAPS */}
             {activeTab === 'radar' && (
               <div className="animate-in fade-in duration-200 pt-2">
-                <RadarMapSection location={currentLocation} />
+                <RadarMapSection
+                  location={currentLocation}
+                  onSelectLocation={handleSelectLocation}
+                  onNavigateToForecast={() => setActiveTab('forecast')}
+                  temperatureUnit={temperatureUnit}
+                />
               </div>
             )}
 
